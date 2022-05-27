@@ -18,28 +18,28 @@ module.exports = () => {
       path: path.resolve(__dirname, "dist"),
     },
     plugins: [
-      // Webpack plugin that generates our html file and injects our bundles. 
+      // Webpack plugin that generates our html file and injects our bundles.
       new HtmlWebpackPlugin({
-        template: './index.html',
-        title: 'Jate'
+        template: "./index.html",
+        title: "Jate",
       }),
       new GenerateSW(),
       // Creates a manifest.json file.
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: 'Jate',
-        short_name: 'Content',
-        description: 'Add content!',
-        background_color: '#225ca3',
-        theme_color: '#225ca3',
-        start_url: './',
-        publicPath: './',
+        name: "Just Another Text Editor",
+        short_name: "J.A.T.E",
+        description: "Add note!",
+        background_color: "#225ca3",
+        theme_color: "#225ca3",
+        start_url: "./",
+        publicPath: "./",
         icons: [
           {
-            src: path.resolve('src/images/logo.png'),
+            src: path.resolve("src/images/logo.png"),
             sizes: [96, 128, 192, 256, 384, 512],
-            destination: path.join('assets', 'icons'),
+            destination: path.join("assets", "icons"),
           },
         ],
       }),
